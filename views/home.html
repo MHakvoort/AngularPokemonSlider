@@ -1,0 +1,46 @@
+<!-- Pokemon slider via $http request in custom directive -->
+<div class="row text-center">
+    <h3>Pokemon slider via custom directive</h3>
+    <poke-directive></poke-directive>
+</div>
+
+<hr>
+
+<!-- Search pokemon via $http request in factory  -->
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h3>Find pokemon via $http in factory</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 ">
+        <input type="text" class="form-control input-lg" ng-model="vm.keyword" placeholder="Enter pokemon name...">
+    </div>
+    <div class="col-md-2 ">
+        <button class="btn btn-lg btn-primary" ng-click="vm.searchPokemon(vm.keyword)">Find Pokémon!</button>
+    </div>
+</div>
+
+<div class="row" ng-if="vm.pokemon">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-capitalize">{{vm.pokemon.name}}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{{vm.pokemon.sprites.front_default}}">
+        </div>
+        <div class="col-md-10">
+            <strong>Name: </strong> {{vm.pokemon.name}} <br>
+            <strong>Base Experience: </strong> {{vm.pokemon.base_experience}} <br>
+            <strong>Height: </strong> {{vm.pokemon.height}} cm <br>
+            <strong>Weight: </strong> {{vm.pokemon.weight}} gram <br>
+        </div>
+    </div>
+
+
+</div>
